@@ -32,20 +32,20 @@ def openJsonData(dir_name):
     return content, settings
 
 
-def main(dir_name, filename):
+def main(dir_name, out_name):
 
-    path_to_save = f'{OUTPUT_DIR}/{filename}'
+    path_to_save = f'{OUTPUT_DIR}/{out_name}'
 
     content, settings = openJsonData(dir_name)
 
-    xml_data = template.render(dir_name=dir_name, content=content, settings=settings)
+    xml_data = template.render(dir_name=dir_name, out_name=out_name, content=content, settings=settings)
 
-    io_data = rml2pdf.parseString(xml_data, removeEncodingLine=True, filename=filename)
+    io_data = rml2pdf.parseString(xml_data, removeEncodingLine=True, filename=out_name)
 
     with open(path_to_save,'wb') as f:
         f.write(io_data.getbuffer())
 
-    print(f'{filename} was successful created in {path_to_save}')
+    print(f'{out_name} was successful created in {path_to_save}')
 
 
 if __name__ == '__main__':
