@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
     parser.add_argument('input_data',
         help='Directoy name inside ./data/ with data requeried by the template')
-    parser.add_argument('filename_out', nargs='?', default=DEFAULT_FILENAME,
+    parser.add_argument('-o', '--output', dest='file', nargs='?', default=DEFAULT_FILENAME,
         help='PDF Filename that will be stored inside ./output/')
     parser.add_argument('-t', '--template', dest='template_name', nargs='?', 
         default=DEFAULT_TEMPLATE,
@@ -68,5 +68,5 @@ if __name__ == '__main__':
     main(
         args.input_data, 
         args.template_name,
-        args.filename_out
+        args.file
     )
