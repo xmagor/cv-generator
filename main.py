@@ -3,20 +3,24 @@ import json
 from z3c.rml import rml2pdf
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+# Local imports
+from utils import *
+
 DEFAULT_FILENAME = 'sample.pdf'
 DEFAULT_TEMPLATE = 'one-column-default.xml'
 DEFAULT_DATA = 'data'
 TEMPLATES_DIR = 'templates'
 OUTPUT_DIR = 'output'
 
-
 env = Environment(
     loader=FileSystemLoader(TEMPLATES_DIR),
     autoescape=select_autoescape()
 )
 
-
 template = env.get_template(DEFAULT_TEMPLATE)
+template.globals['now'] = now
+template.globals['datetime_convert'] = datetime_convert
+
 
 def openJsonData(dir_name):
 
@@ -26,7 +30,6 @@ def openJsonData(dir_name):
     content = data['content']
     settings = data['settings']
     return content, settings
-
 
 
 def main(dir_name, filename):
