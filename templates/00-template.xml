@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<document filename="example.pdf">
+    <docinit>
+        <registerTTFont faceName="ArialUnicodeMS" fileName="./static/fonts/arial_unicode_ms/ArialUnicodeMS.ttf"/>
+    </docinit>
+    <template pageSize="(21cm,29.7cm)" title="Template title" author="Miguel Gómez">
+        <pageTemplate id="first">
+            <pageGraphics>
+                <!-- Footer -->
+                <fill color="#dcdcdc"/>
+				<drawRightString x="20cm" y="0.4cm">Page <pageNumber/> of <getName id="LASTPAGENO"/></drawRightString>
+            </pageGraphics>
+            <frame id="first" x1="0.5cm" y1="1cm" width="20cm" height="24cm"/>
+        </pageTemplate>
+    </template>
+
+    <stylesheet>
+        <paraStyle name="style.Title"
+        fontName="Roboto-Bold"
+        textColor="#e5f2f5"
+        fontSize="15"
+        leading="20"
+        />
+    </stylesheet>
+
+    <story>
+        <h1>Basic template</h1>
+        <para style="parrafos">
+            This template contains the basic structure to build your RML templates!
+        </para>
+
+        <namedString id="LASTPAGENO"><pageNumber/></namedString>
+    </story>
+</document>
