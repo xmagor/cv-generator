@@ -17,10 +17,12 @@ env = Environment(
     autoescape=select_autoescape()
 )
 
-template = env.get_template(DEFAULT_TEMPLATE)
-template.globals['now'] = now
-template.globals['datetime_convert'] = datetime_convert
+def get_template(template_name):
+    template = env.get_template(DEFAULT_TEMPLATE)
+    template.globals['now'] = now
+    template.globals['datetime_convert'] = datetime_convert
 
+    return template
 
 def openJsonData(dir_name):
 
@@ -32,11 +34,13 @@ def openJsonData(dir_name):
     return content, settings
 
 
-def main(dir_name, out_name):
+def main(dir_name, template_name, out_name):
 
     path_to_save = f'{OUTPUT_DIR}/{out_name}.pdf'
 
     content, settings = openJsonData(dir_name)
+
+    template = get_template(template_name)
 
     xml_data = template.render(dir_name=dir_name, out_name=out_name, content=content, settings=settings)
 
@@ -56,6 +60,13 @@ if __name__ == '__main__':
         help='Directoy name inside ./data/ with data requeried by the template')
     parser.add_argument('filename_out', nargs='?', default=DEFAULT_FILENAME,
         help='PDF Filename that will be stored inside ./output/')
+    parser.add_argument('-t', '--template', dest='template_name', nargs='?', 
+        default=DEFAULT_TEMPLATE,
+        help='xml file name to use like template. It should be stored inside ./templates/')
 
     args = parser.parse_args()
-    main(args.input_data, args.filename_out)
+    main(
+        args.input_data, 
+        args.template_name,
+        args.filename_out
+    )
