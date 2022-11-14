@@ -18,7 +18,7 @@ env = Environment(
 )
 
 def get_template(template_name):
-    template = env.get_template(DEFAULT_TEMPLATE)
+    template = env.get_template(template_name)
     template.globals['now'] = now
     template.globals['datetime_convert'] = datetime_convert
 
