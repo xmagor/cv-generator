@@ -31,6 +31,7 @@
                 <place x="4.7cm" y="23.5cm" width="15.8cm" height="5cm">
                     <para style="name">{{content.header.name}}</para>
                     <para style="banner">{{content.header.banner}}</para>
+                    <spacer length="0.1cm" />
                     <para style ="paragraphs">
                         Contact: 
                         {% for item in content.header.contact %}
@@ -58,7 +59,7 @@
 				<fill color="#dcdcdc"/>
 				<drawString x="1cm" y="0.4cm">Updated: {{now('%d/%m/%Y')}}</drawString>
             </pageGraphics>
-            <frame id="first" x1="0.5cm" y1="1cm" width="20cm" height="24cm"/>
+            <frame id="first" x1="0.5cm" y1="1cm" width="20cm" height="23.7cm"/>
         </pageTemplate>
         <pageTemplate id="second">
             <pageGraphics>
@@ -100,7 +101,7 @@
         <paraStyle name="banner"
         fontName="Roboto-Medium"
         fontSize="12"
-        leading="20"
+        leading="15"
         textColor="{{settings.colors.top_page}}"
         />
         <paraStyle name="section"

@@ -6,8 +6,8 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 # Local imports
 from utils import *
 
-DEFAULT_FILENAME = 'sample.pdf'
-DEFAULT_TEMPLATE = 'one-column-default.xml'
+DEFAULT_FILENAME = 'sample'
+DEFAULT_TEMPLATE = 'cv-one-column-default.xml'
 DEFAULT_DATA = 'data'
 TEMPLATES_DIR = 'templates'
 OUTPUT_DIR = 'output'
@@ -34,7 +34,7 @@ def openJsonData(dir_name):
 
 def main(dir_name, out_name):
 
-    path_to_save = f'{OUTPUT_DIR}/{out_name}'
+    path_to_save = f'{OUTPUT_DIR}/{out_name}.pdf'
 
     content, settings = openJsonData(dir_name)
 
@@ -45,7 +45,7 @@ def main(dir_name, out_name):
     with open(path_to_save,'wb') as f:
         f.write(io_data.getbuffer())
 
-    print(f'{out_name} was successful created in {path_to_save}')
+    print(f'{out_name}.pdf was successful created in {path_to_save}')
 
 
 if __name__ == '__main__':
