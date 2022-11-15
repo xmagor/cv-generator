@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+
+<document filename="{{out_name}}.pdf">
+    <docinit>
+        <registerTTFont faceName="ArialUnicodeMS"
+            fileName="./static/fonts/arial_unicode_ms/ArialUnicodeMS.ttf"/>
+        <registerTTFont faceName="Roboto-Bold"
+            fileName="./static/fonts/Roboto/Roboto-Bold.ttf"/>
+        <registerTTFont faceName="Roboto-Regular"
+            fileName="./static/fonts/Roboto/Roboto-Regular.ttf"/>
+        <registerTTFont faceName="Roboto-Medium"
+            fileName="./static/fonts/Roboto/Roboto-Medium.ttf"/>
+        <registerTTFont faceName="Roboto-Black"
+            fileName="./static/fonts/Roboto/Roboto-Black.ttf"/>
+
+    </docinit>
+    <template pageSize="(21cm,29.7cm)" title="Curriculum Vitae" author="{{content.header.name}}">
+        <pageTemplate id="first">
+            <pageGraphics>
+                <fill color="{{settings.colors.top_page}}"/>
+                <rect x="0" y="0" width="6.7cm" height="29.7cm" fill="yes" stroke="no"/>
+
+                <fill color="#FFFFFF"/>
+                <stroke color="#FFFFFF" width="0"/>
+                <circle radius="2cm" x="3.15cm" y="27.25cm" fill="1" />
+
+                <place x="0.7cm" y="5cm" width="6.7cm" height="24cm">
+                    <imageAndFlowables imageName="{{content.header.picture}}"
+                        imageSide="left" imageWidth="3.5cm"
+                        imageHeight="3.5cm" imageLeftPadding="0.7cm"/>
+                    <spacer length="0.5cm" />
+
+                    <title>Contact:</title>
+                    <spacer length="0.1cm" />
+                    {% for item in content.header.contact %}
+                        <para style ="left_side_text">
+                            {% for icon in item.icon %}
+                                <img src="{{icon}}" width="12" height="12" />
+                            {% endfor %}
+
+                            {% if item.href %}
+                                <a href="{{item.href}}">{{item.url_name}}</a>
+                            {% elif item.url_name %}
+                                {{item.url_name}}
+                            {% endif %}
+                        </para>
+                        <spacer length="0.15cm" />
+                    {% endfor %}
+
+                    <spacer length="0.5cm" />
+                    {% set skills = content.sections.0 %}
+                    <title>{{skills.header.name}}</title>
+                    <spacer length="0.1cm" />
+                    <ul style="blank">
+                        {% for item in skills.subsections.0.fields.0.paragraphs.paragraphs_list.0 %}
+                            <li>
+                                <para style="left_side_text">
+                                {% for icon in item.icon %}
+                                    <img src="{{icon}}" width="12" height="12" />
+                                {% endfor %}
+
+                                {% if item.href %}
+                                    <a href="{{item.href}}">{{item.url_name}}</a>
+                                {% elif item.url_name %}
+                                    {{item.url_name}}
+                                {% endif %}
+                                {{item.text}}
+                                </para>
+                                <spacer length="0.15cm" />
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </place>
+
+                <!-- Footer -->
+				<drawRightString x="20cm" y="0.4cm">
+                    Page <pageNumber/> of <getName id="LASTPAGENO"/>
+                </drawRightString>
+				<fill color="#dcdcdc"/>
+				<drawString x="1cm" y="0.4cm">Updated: {{now('%d/%m/%Y')}}</drawString>
+            </pageGraphics>
+            <frame id="first" x1="7.2cm" y1="0.5cm" width="12.8cm" height="28.15cm"/>
+        </pageTemplate>
+        <pageTemplate id="second">
+            <pageGraphics>
+                <fill color="{{settings.colors.top_page}}"/>
+                <rect x="0" y="0" width="6.7cm" height="29.7cm" fill="yes" stroke="no"/>
+                <!-- Footer -->
+                <drawRightString x="20cm" y="0.4cm">
+                    Page <pageNumber/> of <getName id="LASTPAGENO"/>
+                </drawRightString>
+                <fill color="#dcdcdc"/>
+                <drawString x="1cm" y="0.4cm">Updated: {{now('%d/%m/%Y')}}</drawString>
+            </pageGraphics>
+            <frame id="first" x1="7.2cm" y1="0.5cm" width="12.8cm" height="28.15cm"/>
+        </pageTemplate>
+    </template>
+
+    <stylesheet>
+        <paraStyle name="style.Title"
+        fontName="Roboto-Bold"
+        textColor="#e5f2f5"
+        fontSize="15"
+        leading="20"
+        />
+        <paraStyle name="general-text"
+            fontName="ArialUnicodeMS"
+            fontSize="11"
+            textColor="#191919"
+        />
+        <paraStyle name="paragraphs"
+            parent="general-text"
+            leading = "15"
+        />
+        <paraStyle name="name"
+        fontName="Roboto-Bold"
+        fontSize="30"
+        leading="40"
+        textColor="{{settings.colors.top_page}}"
+        />
+        <paraStyle name="banner"
+        fontName="Roboto-Medium"
+        fontSize="12"
+        leading="15"
+        textColor="{{settings.colors.top_page}}"
+        />
+        <paraStyle name="left_side_text"
+        fontName="Roboto-Regular"
+        textColor="#FFFFFF"
+        fontSize="10"
+        />
+        <paraStyle name="section"
+        fontName="Roboto-Bold"
+        fontSize="15"
+        leading="22"
+        />
+        <paraStyle name="subsection"
+        fontName="Roboto-Bold"
+        fontSize="15"
+        leading="22"
+        />
+        <paraStyle name="title"
+        fontName="Roboto-Bold"
+        fontSize="12"
+        leading="15"
+        spaceBefore="7"
+        />
+        <paraStyle name="code"
+        parent="general-text"
+        fontName="Roboto-Regular"
+        leading="15"
+        textColor="#9f9f9f"
+        />
+        <listStyle name="blank"
+        spaceAfter="10"
+        start=" "
+        spaceBefore="23"
+        />
+        <listStyle name="paragraphs_list"
+        spaceAfter="10"
+        start="rarrowhead"
+        spaceBefore="23"
+        bulletFontSize="10"
+        />
+    </stylesheet>
+
+    <story>
+        <setNextTemplate name="second"/>
+
+        <h1 style="name">{{content.header.name}}</h1>
+        <para style="banner">{{content.header.banner}}</para>
+        <spacer length="0.2cm" />
+
+        <para style="paragraphs">
+            {{content.header.about}}
+        </para>
+
+        {% for section in content.sections %}
+            {% if not loop.first %}
+                <spacer length="0.5cm" />
+                {% if section.header %}
+                    <condPageBreak height="3cm" />
+                    {% if section.header.href %}
+                        <h3 style="section">
+                            <a href="{{section.header.href}}">{{section.header.name}}</a>
+                        </h3>
+                    {% elif section.header.name %}
+                        <h3 style="section">{{section.header.name}}</h3>
+                    {% endif %}
+                {% endif %}
+                <hr color="{{settings.colors.top_page}}" thickness="2pt" width="20cm"
+                    spaceAfter = "0.3cm" spaceBefore = "0cm"/>
+
+                {% for subsection in section.subsections %}
+                    {% if not loop.first %}
+                        <spacer length="0.35cm" />
+                    {% endif %}
+                    {% if subsection.header %}
+                        <condPageBreak height="3cm" />
+                        {% if subsection.header.href %}
+                            <h4 style="subsection">
+                                <a href="{{subsection.header.href}}">{{subsection.header.name}}</a>
+                            </h4>
+                        {% elif subsection.header.name %}
+                            <h4 style="subsection">{{subsection.header.name}}</h4>
+                        {% endif %}
+                    {% endif %}
+
+                    {% for field in subsection.fields %}
+                        {% if not loop.first %}
+                            <spacer length="0.2cm" />
+                        {% endif %}
+                        <ul style="blank">
+                            <li>
+                                <condPageBreak height="3cm" />
+                                <para style ="title"><b>{{field.title}}</b></para>
+                                <ul style="blank">
+                                    <li>
+                                        <para style ="paragraphs">
+                                            {{field.location.name}}
+
+                                            {% if field.location.href %}
+                                                {% if field.location.name %}
+                                                    |
+                                                {% endif %}
+                                                <a href="{{field.location.href}}">
+                                                    {{field.location.url_name}}
+                                                </a>
+                                            {% endif %}
+
+                                            {% set current_format_date = field.location.current_format_date if field.location.current_format_date else '%d/%m/%Y' %}
+                                            {% set new_format_date = field.location.new_format_date if field.location.new_format_date else '%b, %Y' %}
+                                            {% set start_date = field.location.start_date %}
+                                            {% set end_date = field.location.end_date %}
+
+                                            {% if start_date and end_date %}
+                                                | {{datetime_convert(start_date, current_format_date, new_format_date)}} -
+                                                {{datetime_convert(end_date, current_format_date, new_format_date)}}.
+                                            {% elif start_date and not end_date %}
+                                                | {{datetime_convert(start_date, current_format_date, new_format_date)}} -
+                                                ({{settings.end_date}}).
+                                            {% elif not start_date and end_date %}
+                                                | {{datetime_convert(end_date, current_format_date, new_format_date)}}.
+                                            {% endif %}
+                                        </para>
+                                    </li>
+                                    <li><para style ="code">{{field.code}}</para></li>
+                                    <li>
+                                        {% if field.paragraphs %}
+                                            <ul style="paragraphs_list">
+                                            {% for paragraphs_list in field.paragraphs.paragraphs_list %}
+                                                <li>
+                                                    <para style ="paragraphs">
+                                                        {% for item in paragraphs_list %}
+                                                            {% for icon in item.icon %}
+                                                                <img src="{{icon}}" width="12" height="12" />
+                                                            {% endfor %}
+
+                                                            {% if item.href %}
+                                                                <a href="{{item.href}}">{{item.url_name}}</a>
+                                                            {% elif item.url_name %}
+                                                                {{item.url_name}}
+                                                            {% endif %}
+
+                                                            {% if item.text %}
+                                                                {{item.text}}
+                                                            {% endif %}
+
+                                                            {% if not loop.last and field.paragraphs.separator %}
+                                                                {{field.paragraphs.separator}}
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </para>
+                                                </li>
+                                            {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        <namedString id="LASTPAGENO"><pageNumber/></namedString>
+    </story>
+</document>
