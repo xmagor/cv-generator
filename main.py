@@ -8,7 +8,7 @@ from utils import *
 
 DEFAULT_FILENAME = 'sample'
 DEFAULT_TEMPLATE = 'cv-one-column-default.xml'
-DEFAULT_DATA = 'data'
+DEFAULT_DATA = 'data/sample/data.json'
 TEMPLATES_DIR = 'templates'
 OUTPUT_DIR = 'output'
 
@@ -24,9 +24,9 @@ def get_template(template_name):
 
     return template
 
-def openJsonData(dir_name):
+def openJsonData(input_data):
 
-    with open(f'{DEFAULT_DATA}/{dir_name}/data.json', 'r') as f:
+    with open(f'{input_data}', 'r') as f:
         data = json.load(f)
 
     content = data['content']
@@ -34,15 +34,16 @@ def openJsonData(dir_name):
     return content, settings
 
 
-def main(dir_name, template_name, out_name):
+def main(input_data, template_name, out_name):
 
     path_to_save = f'{OUTPUT_DIR}/{out_name}.pdf'
 
-    content, settings = openJsonData(dir_name)
+    content, settings = openJsonData(input_data)
 
     template = get_template(template_name)
 
-    xml_data = template.render(dir_name=dir_name, out_name=out_name, content=content, settings=settings)
+    input_dir = '/'.join(input_data.split('/')[:-1])
+    xml_data = template.render(input_dir=input_dir, out_name=out_name, content=content, settings=settings)
 
     io_data = rml2pdf.parseString(xml_data, removeEncodingLine=True, filename=out_name)
 
@@ -56,8 +57,8 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(prog='cv-generator')
 
-    parser.add_argument('input_data',
-        help='Directoy name inside ./data/ with data requeried by the template')
+    parser.add_argument('input_data', nargs='?', default=DEFAULT_DATA,
+        help='Path where data.json is stored')
     parser.add_argument('-o', '--output', dest='file', nargs='?', default=DEFAULT_FILENAME,
         help='PDF Filename that will be stored inside ./output/')
     parser.add_argument('-t', '--template', dest='template_name', nargs='?', 
