@@ -24,7 +24,7 @@
                 <stroke color="#FFFFFF" width="0"/>
                 <circle radius="2cm" x="2.45cm" y="27.25cm" fill="1" />
                 <place x="0" y="25cm" width="4cm" height="4cm">
-                |   <imageAndFlowables imageName="{{content.header.picture}}"
+                    <imageAndFlowables imageName="{{input_dir}}/img/{{content.header.picture}}"
                         imageSide="left" imageWidth="3.5cm"
                         imageHeight="3.5cm" imageLeftPadding="0.7cm"/>
                 </place>

@@ -25,7 +25,7 @@
                 <circle radius="2cm" x="3.15cm" y="27.25cm" fill="1" />
 
                 <place x="0.7cm" y="5cm" width="6.7cm" height="24cm">
-                    <imageAndFlowables imageName="{{content.header.picture}}"
+                    <imageAndFlowables imageName="{{input_dir}}/img/{{content.header.picture}}"
                         imageSide="left" imageWidth="3.5cm"
                         imageHeight="3.5cm" imageLeftPadding="0.7cm"/>
                     <spacer length="0.5cm" />
