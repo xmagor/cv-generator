@@ -4,4 +4,9 @@ output/*
 
 # But allow the sample
 !data/sample/
-!output/sample.pdf
+!output/sample_cv_one_column.pdf
+!output/sample_cv_two_column.pdf
+
+
+# other
+*.drawio
