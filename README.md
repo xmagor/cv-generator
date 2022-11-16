@@ -35,11 +35,11 @@ To see the help guide:
 
 ```
 $ pipenv shell
-(cv-generator)$ python main.py -h
-usage: cv-generator [-h] [-o [FILE]] [-t [TEMPLATE_NAME]] input_data
+(cv-generator)$ python main.py --help
+usage: cv-generator [-h] [-o [FILE]] [-t [TEMPLATE_NAME]] [input_data]
 
 positional arguments:
-  input_data            Directoy name inside ./data/ with data requeried by the template
+  input_data            Path where data.json is stored
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -49,13 +49,30 @@ optional arguments:
                         xml file name to use like template. It should be stored inside ./templates/
 ```
 
-Test the sample data, it will generate a `/output/sample.pdf` file like [this one](./output/sample.pdf) and it use the default template [cv-one-column-default.xml](./templates/cv-one-column-default.xml):
+
+
+## Example
+
+Test the [sample data](./data/sample/data.json), the default template is [cv-one-column-default.xml](./templates/cv-one-column-default.xml).
 
 ```
 $ pipenv shell
-(cv-generator)$ python main.py sample
+# Default template
+(cv-generator)$ python main.py -o sample_cv_one_column
+sample_cv_one_column.pdf was successful created in output/sample_cv_one_column.pdf
+
+# Specify a custom template inside ./templates/
+(cv-generator)$ python main.py -o sample_cv_two_column -t cv-two-columns.xml
+sample_cv_two_column.pdf was successful created in output/sample_cv_two_column.pdf
 ```
 
+The output pdfs looks similar to the imagen below.
+![cv-example-one-and-two-columns.png](./static/img/cv-example-one-and-two-columns.png)
+
+You can review them in [sample_cv_one_column.pdf](./output/sample_cv_one_column.pdf) and [sample_cv_two_column.pdf)](./output/sample_cv_two_column.pdf)
+
+
+## Learn more
 
 Read the [wiki](https://github.com/xmagor/cv-generator/wiki) to know how structure your data and how create custom templates.
 
