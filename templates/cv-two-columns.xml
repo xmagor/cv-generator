@@ -78,6 +78,18 @@
                 </drawRightString>
 				<fill color="#dcdcdc"/>
 				<drawString x="1cm" y="0.4cm">Updated: {{now('%d/%m/%Y')}}</drawString>
+                <place x="5.2cm" y="0.1cm" width="12cm" height="0.7cm">
+                    <para style="atribution_resources">
+                        <a href="https://www.flaticon.com/free-icons/linkedin">
+                            Linkedin icons created by riajulislam - Flaticon</a> |
+                        <a href="https://www.flaticon.com/free-icons/terminal">
+                            Terminal icons created by icon_small - Flaticon</a> |
+                        <a href="https://www.flaticon.com/free-icons/github">
+                            Github, Excel icons created by Pixel perfect - Flaticon</a> |
+                        <a href="https://www.flaticon.com/free-icons/gmail">
+                            Python, Gmail, Linux, Mysql  icons created by Freepik - Flaticon</a>
+                    </para>
+                </place>
             </pageGraphics>
             <frame id="first" x1="7.2cm" y1="0.5cm" width="12.8cm" height="28.15cm"/>
         </pageTemplate>
@@ -91,6 +103,32 @@
                 </drawRightString>
                 <fill color="#dcdcdc"/>
                 <drawString x="1cm" y="0.4cm">Updated: {{now('%d/%m/%Y')}}</drawString>
+                <!--
+                <a href="https://www.flaticon.com/free-icons/linux">
+                    Linux icons created by Freepik - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/excel">
+                    Excel icons created by Pixel perfect - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/python">
+                    Python icons created by Freepik - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/mysql">
+                    Mysql icons created by Freepik - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/telegram">
+                    Telegram icons created by Freepik - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/whatsapp">
+                    Whatsapp icons created by Fathema Khanom - Flaticon</a>
+                -->
+                <place x="5.2cm" y="0.1cm" width="12cm" height="0.7cm">
+                    <para style="atribution_resources">
+                        <a href="https://www.flaticon.com/free-icons/linkedin">
+                            Linkedin icons created by riajulislam - Flaticon</a> |
+                        <a href="https://www.flaticon.com/free-icons/terminal">
+                            Terminal icons created by icon_small - Flaticon</a> |
+                        <a href="https://www.flaticon.com/free-icons/github">
+                            Github, Excel icons created by Pixel perfect - Flaticon</a> |
+                        <a href="https://www.flaticon.com/free-icons/gmail">
+                            Python, Gmail, Linux, Mysql  icons created by Freepik - Flaticon</a>
+                    </para>
+                </place>
             </pageGraphics>
             <frame id="first" x1="7.2cm" y1="0.5cm" width="12.8cm" height="28.15cm"/>
         </pageTemplate>
@@ -161,6 +199,12 @@
         start="rarrowhead"
         spaceBefore="23"
         bulletFontSize="10"
+        />
+        <paraStyle name="atribution_resources"
+        textColor="#dcdcdc"
+        fontSize="7"
+        leading="6"
+        alignment="center"
         />
     </stylesheet>
 
