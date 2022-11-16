@@ -1,0 +1,345 @@
+{
+    "content": {
+        "header": {
+            "name": "John Doe",
+            "banner": "Front-end Developer | React | Typescript | Vue ",
+            "contact":[
+                {
+                    "icon": [],
+                    "href": "",
+                    "url_name": "+00 1234567890"
+                },
+                {
+                    "icon": [],
+                    "href" : "mailto:test@test.com",
+                    "url_name": "test@test.com"
+                }
+            ],
+            "about": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+            "picture": "profile-pic.png"
+        },
+        "sections":[
+            {
+                "header": {
+                    "name": "Skills",
+                    "href": ""
+                },
+                "subsections": [
+                    {
+                        "fields": [
+                            {
+                                "title": "",
+                                "location": {
+                                    "name": "",
+                                    "href": "",
+                                    "url_name": "",
+                                    "start_date": "",
+                                    "end_date": "",
+                                    "current_format_date": "",
+                                    "new_format_date": ""
+                                },
+                                "code": "",
+                                "paragraphs": {
+                                    "separator":"|",
+                                    "paragraphs_list": [ 
+                                        [
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "React"
+                                            },
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "Typescript"
+                                            },
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "Vuejs"
+                                            }
+                                        ],
+                                        [
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "Languages: Esperanto (Native) ; English."
+                                            }
+                                        ]
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "header": {
+                    "name": "Work Experience",
+                    "href": ""
+                },
+                "subsections": [
+                    {
+                        "header": {
+                            "name": "Fulltime",
+                            "href": ""
+                        },
+                        "fields": [
+                            {
+                                "title": "Lorem ipsum dolor sit amet",
+                                "location": {
+                                    "name": "Lorem ipsum dolor",
+                                    "href": "",
+                                    "url_name": "",
+                                    "start_date": "16/11/2022",
+                                    "end_date": "16/11/2022"
+                                },
+                                "code": "React, Vujs, Typescript.",
+                                "paragraphs": {
+                                    "paragraphs_list": [
+                                        [
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+                                            }
+                                        ],
+                                        [
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "header": {
+                            "name": "Part-time",
+                            "href": ""
+                        },
+                        "fields": [
+                            {
+                                "title": "Lorem ipsum",
+                                "location": {
+                                    "name": "Lorem",
+                                    "href": "",
+                                    "url_name": "",
+                                    "start_date": "16/01/2000",
+                                    "end_date": "16/11/2022"
+                                },
+                                "code": "React, Vujs, Typescript.",
+                                "paragraphs": {
+                                    "paragraphs_list":[]
+                                }
+                            },
+                            {
+                                "title": "Lorem ipsum dolor",
+                                "location": {
+                                    "name": "Lorem ipsum",
+                                    "href": "",
+                                    "url_name": "",
+                                    "start_date": "01/01/1990",
+                                    "end_date": "01/01/2000"
+                                },
+                                "code": "React, Vujs, Typescript.",
+                                "paragraphs": {
+                                    "paragraphs_list": [
+                                        [
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et"
+                                            }
+                                        ],
+                                        [
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "header": {
+                    "name": "Education",
+                    "href": ""
+                },
+                "subsections": [
+                    {
+                        "fields": [
+                            {
+                                "title": "Lorem ipsum dolor sit",
+                                "location": {
+                                    "name": "Lorem ipsum dolor sit",
+                                    "href": "",
+                                    "url_name": "",
+                                    "start_date": "05/05/2000",
+                                    "end_date": ""
+                                },
+                                "code": "STUDENT Lorem ipsum dolor sit",
+                                "paragraphs": {
+                                    "paragraphs_list": [
+                                        [
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "Lorem ipsum dolor sit"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            },
+                            {
+                                "title": "Lorem ipsum dolor sit",
+                                "location": {
+                                    "name": "Lorem ipsum dolor",
+                                    "href": "",
+                                    "url_name": "",
+                                    "start_date": "05/05/2000",
+                                    "end_date": ""
+                                },
+                                "code": "",
+                                "paragraphs": {
+                                    "paragraphs_list": [
+                                        [
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "Lorem ipsum dolor sit."
+                                            }
+                                        ]
+                                    ]
+                                }
+                            },
+                            {
+                                "title": "Lorem ipsum dolor sit",
+                                "location": {
+                                    "name": "",
+                                    "href": "",
+                                    "url_name": "",
+                                    "start_date": "10/01/1900",
+                                    "end_date": "10/11/1900"
+                                },
+                                "code": "",
+                                "paragraphs": {
+                                    "paragraphs_list":[
+                                        [
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "Lorem ipsum dolor sit"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "header": {
+                    "name": "Publications",
+                    "href": ""
+                },
+                "subsections": [
+                    {
+                        "header": {
+                            "name": "Lorem ipsum dolor sit",
+                            "href": ""
+                        },
+                        "fields": [
+                            {
+                                "title": "Lorem ipsum dolor sit",
+                                "location": {
+                                    "name": "",
+                                    "href": "",
+                                    "url_name": "",
+                                    "start_date": "",
+                                    "end_date": "31/12/2010",
+                                    "new_format_date": "%d %b, %Y"
+                                },
+                                "code": "Lorem ipsum dolor sit | Lorem ipsum dolor sit",
+                                "paragraphs": {
+                                    "paragraphs_list": [
+                                        [
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "Lorem ipsum dolor sit"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "header": {
+                    "name": "Events",
+                    "href": ""
+                },
+                "subsections": [
+                    {
+                        "fields": [
+                            {
+                                "title": "Lorem ipsum dolor sit",
+                                "location": {
+                                    "name": "Lorem ipsum dolor sit",
+                                    "href": "",
+                                    "url_name": "",
+                                    "start_date": "16/12/2070",
+                                    "end_date": "16/12/2070",
+                                    "new_format_date": "%d %b, %Y"
+                                },
+                                "code": "Lorem ipsum dolor sit",
+                                "paragraphs": {
+                                    "paragraphs_list": [
+                                        [
+                                            { 
+                                                "icon": [],
+                                                "href": "",
+                                                "url_name": "",
+                                                "text": "Lorem ipsum dolor sit"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "settings": {
+        "end_date": "Currently",
+        "colors":{
+            "top_page": "#284455"
+        }
+    }
+}
