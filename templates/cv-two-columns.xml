@@ -73,11 +73,14 @@
                 </place>
 
                 <!-- Footer -->
-				<drawRightString x="20cm" y="0.4cm">
+                <setFont name="Helvetica" size="10"/>
+                <fill color="#dcdcdc"/>
+                <drawString x="0.5cm" y="0.4cm">Updated: {{now('%d/%m/%Y')}}</drawString>
+                <fill color="{{settings.colors.top_page}}"/>
+                <drawRightString x="20cm" y="0.4cm">
                     Page <pageNumber/> of <getName id="LASTPAGENO"/>
                 </drawRightString>
-				<fill color="#dcdcdc"/>
-				<drawString x="1cm" y="0.4cm">Updated: {{now('%d/%m/%Y')}}</drawString>
+
                 <place x="5.2cm" y="0.1cm" width="12cm" height="0.7cm">
                     <para style="atribution_resources">
                         <a href="https://www.flaticon.com/free-icons/linkedin">
@@ -97,12 +100,15 @@
             <pageGraphics>
                 <fill color="{{settings.colors.top_page}}"/>
                 <rect x="0" y="0" width="6.7cm" height="29.7cm" fill="yes" stroke="no"/>
+ 
                 <!-- Footer -->
+                <setFont name="Helvetica" size="10"/>
+                <fill color="#dcdcdc"/>
+                <drawString x="0.5cm" y="0.4cm">Updated: {{now('%d/%m/%Y')}}</drawString>
+                <fill color="{{settings.colors.top_page}}"/>
                 <drawRightString x="20cm" y="0.4cm">
                     Page <pageNumber/> of <getName id="LASTPAGENO"/>
                 </drawRightString>
-                <fill color="#dcdcdc"/>
-                <drawString x="1cm" y="0.4cm">Updated: {{now('%d/%m/%Y')}}</drawString>
                 <!--
                 <a href="https://www.flaticon.com/free-icons/linux">
                     Linux icons created by Freepik - Flaticon</a>
